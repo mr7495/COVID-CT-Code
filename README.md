@@ -8,13 +8,21 @@ We introduce a new dataset that contains 48260 CT scan images from 282 normal pe
 
 In this paper, we introduce a fully-automated method for detecting COVID-19 cases from the output files(images) of the lung HRCT scan device. This system does not need any medical expert for system configuration and takes all the CT scans of a patient and clarifies if he is infected to COVID-19 or not.
 
-We also introduce and share a new dataset that we called COVID-CTset that contains 15589 COVID-19 images from 95 patients and 48260 normal images from 282 persons. At the first stage of our work, we use an image processing algorithm for selecting those images of the patients, that inside the lung and the possible infections be observable in them. In this way, we speed up the process because the network does not have to analyze all the images. Also, we improve the accuracy by giving the network the proper images.
+We also introduce and share a new dataset that we called COVID-CTset that contains 15589 COVID-19 images from 95 patients and 48260 normal images from 282 persons.
+
+**The details about our dataset is availabel at [COVID-CTset](https://github.com/mr7495/COVID-CTset)**
+
+At the first stage of our work, we use an image processing algorithm for selecting those images of the patients, that inside the lung and the possible infections be observable in them. In this way, we speed up the process because the network does not have to analyze all the images. Also, we improve the accuracy by giving the network the proper images.
 
  After that, we will train and test three deep convolutional neural networks for classifying the selected images. One of them is our proposed enhanced version of ResNet50V2 with a feature pyramid network. At the final stage, after the deep network is ready, we evaluate our fully automated system on more than 230 patients and 7996 images. 
  
 The general view of our work in this paper is represented in nextfigure.
 
-
+<p align="center">
+	<img src="images/general-1.jpg" alt="photo not available" width="100%" height="70%">
+	<br>
+	<em> General view of our proposed fully automated network</em>
+</p>
 
 
 
