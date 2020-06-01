@@ -63,3 +63,19 @@ In the next figure, the image sequence of one patient is depicted, where you can
 </p>
 
 **The CT selection algorithm is shared at [CT_selection_algorithm.py](CT_selection_algorithm.py)**
+
+In this research, at the next stage of our work, we used deep convolution networks to classify the selected image of the first stage into normal or COVID-19. We utilized Xception, ResNet50V2 and a modified version of ResNet50V2 for running the classification.
+
+
+
+Feature pyramid network(FPN) helps when there are objects with different scales in the image. Although here we investigate image classification, to do this, the network must learn about the infection points and classify the image based on them. Using FPN can help us better classify the images in our cases.
+
+In the next figure you can see the architecture of the proposed network.  We used concatenation layers instead of adding layers in the default version of the feature pyramid network due to the authors' experience. At the end of the network, we concatenated the five classification results of the feature pyramid outputs(each output presents classification based on one scale features) and gave it to the classifier so that the network can use all of them for better classification. 
+
+<p align="center">
+	<img src="images/FPN-1.jpg" alt="photo not available" width="100%" height="70%">
+	<br>
+	<em>Architecture of ResNet50V2 with FPN</em>
+</p>
+
+
