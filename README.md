@@ -1,27 +1,18 @@
 # A Fully Automated Deep Learning-based Network For Detecting COVID-19 from a New And Large Lung CT Scan Dataset
 
-COVID-19 is a severe global problem that has crippled many industries and killed many people around the world. One of the primary ways to decrease the casualties is the infected person's identification at the proper time. AI can play a significant role in these cases by monitoring and detecting infected persons in early-stage so that it can help many organizations.
+COVID-19 is a severe global problem that has crippled many industries and killed many people around the world. One of the primary ways to decrease the casualties is the infected person's identification at the proper time.
  In this paper, we aim to propose a fully-automated method to detect COVID-19 from the patient's CT scan without needing a clinical technician.
-We introduce a new dataset that contains 48260 CT scan images from 282 normal persons and 15589 images from 95 patients with COVID-19 infection. Our proposed network takes all the CT scan image sequences of a patient as the input and determines if the patient is infected with COVID-19. At the first stage, this network runs an image processing algorithm to discard those CT images that inside the lung is not properly visible in them. This helps to reduce the number of images that shall be identified as normal or COVID-19, so it reduces the processing time. Also, running this algorithm makes the deep network at the next stage to analyze only the proper images and thus reduces false detections. At the next stage, we propose a modified version of ResNet50V2 that is enhanced by a feature pyramid network for classifying the selected CT images into COVID-19 or normal. If enough number of chosen CT scan images of a patient be identified as COVID-19, the network considers that patient, infected to this disease. The ResNet50V2 with feature pyramid network achieved 98.49% accuracy on more than 7996 validation images and correctly identified almost 237 patients from 245 patients.
+We introduce a new [dataset](https://github.com/mr7495/COVID-CTset) that contains 48260 CT scan images from 282 normal persons and 15589 images from 95 patients with COVID-19 infection. Our proposed network takes all the CT scan image sequences of a patient as the input and determines if the patient is infected with COVID-19. At the first stage, this network runs an image processing algorithm to discard those CT images that inside the lung is not properly visible in them. This helps to reduce the number of images that shall be identified as normal or COVID-19, so it reduces the processing time. Also, running this algorithm makes the deep network at the next stage to analyze only the proper images and thus reduces false detections. At the next stage, we propose a modified version of ResNet50V2 that is enhanced by a feature pyramid network for classifying the selected CT images into COVID-19 or normal. If enough number of chosen CT scan images of a patient be identified as COVID-19, the network considers that patient, infected to this disease. The ResNet50V2 with feature pyramid network achieved 98.49% accuracy on more than 7996 validation images and correctly identified almost 237 patients from 245 patients.
 
-
-
-In this paper, we introduce a fully-automated method for detecting COVID-19 cases from the output files(images) of the lung HRCT scan device. This system does not need any medical expert for system configuration and takes all the CT scans of a patient and clarifies if he is infected to COVID-19 or not.
-
-We also introduce and share a new dataset that we called COVID-CTset that contains 15589 COVID-19 images from 95 patients and 48260 normal images from 282 persons.
 
 **The details about our dataset is available at [COVID-CTset](https://github.com/mr7495/COVID-CTset)**
-
-At the first stage of our work, we use an image processing algorithm for selecting those images of the patients, that inside the lung and the possible infections be observable in them. In this way, we speed up the process because the network does not have to analyze all the images. Also, we improve the accuracy by giving the network the proper images.
-
- After that, we will train and test three deep convolutional neural networks for classifying the selected images. One of them is our proposed enhanced version of ResNet50V2 with a feature pyramid network. At the final stage, after the deep network is ready, we evaluate our fully automated system on more than 230 patients and 7996 images. 
  
-The general view of our work in this paper is represented in nextfigure.
+The general view of our work in this paper is represented in the next figure.
 
 <p align="center">
-	<img src="images/general-1.jpg" alt="photo not available" width="100%" height="70%">
-	<br>
-	<em> General view of our proposed fully automated network</em>
+    <img src="images/general-1.jpg" alt="photo not available" width="100%" height="70%">
+    <br>
+    <em> General view of our proposed fully automated network</em>
 </p>
 
 
@@ -32,19 +23,17 @@ The lung HRCT scan device takes a sequence of consecutive images(we can call it 
 
 The clinical expert analyzes theses consecutive images and, if he finds the infections on some of them, indicates the patient as infected. 
 
-Many previous methods selected an image of each patient's lung HRCT images and then used them for training and validation. Here we decide to make the patient lung analysis fully automated. Consider we have a neural network that is trained for classifying CVOID-19 cases based on a selected data that inside the lung was obviously visible in them. If we test that network on each image of an image sequence the belongs to a patient, the network may fail. Because at the beginning and the end of each CT scan image sequence, the lung is closed as it is depicted in the next figure. Hence, the network has not seen these cases while training; it may result in wrong detections, and so does not work well. 
+Consider we have a neural network that is trained for classifying CVOID-19 cases based on a selected data that inside the lung was obviously visible in them. If we test that network on each image of an image sequence the belongs to a patient, the network may fail, because the lung is closed at the beginning and the end of each CT scan image sequence as it is depicted in the next figure. Hence, the network has not seen these cases while training; it may result in wrong detections, and so does not work well. 
 
 <p align="center">
-	<img src="images/open-closed-1.jpg" alt="photo not available" width="100%" height="70%">
-	<br>
-	<em> This figure shows the difference between an open lung and a closed lung</em>
+    <img src="images/open-closed-1.jpg" alt="photo not available" width="100%" height="70%">
+    <br>
+    <em> This figure shows the difference between an open lung and a closed lung</em>
 </p>
 
+ We propose some other techniques to discard the images that inside the lungs are not visible in them. Doing this also reduces performing time for good because, because the networks now only see some selected images.
 
-
-To solve this, we can separate the dataset into three classes: infection-visible,no-infection, and lung-closed. Although this removes the problem but dividing the dataset into three classes has other costs like spending some time for making new labels, changing the network validation way. Also, it increases the processing time because the network shall see all the images of patient CT scans. But we propose some other techniques to discard the images that inside the lungs are not visible in them. Doing this also reduces performing time for good because, in the last method, the networks should have seen all the images, and now it only sees some selected images.
-
-The main difference between an open lung and closed lung is that the open lung image has lower pixel values(near to black) in the middle of the lung. First, we set a region in the middle of the images for analyzing the pixel values in them. This region should be at the center of the lung in all the images, so open-lung and closed-lung show the differences in this area. Unfortunately, the images of the dataset were not on one scale, and the lung's position differed for different patients; so after experiments and analysis, as the images have 512*512 pixels resolution, we set the region in the area of 120 to 370 pixels in the x-axis and 240 to 340 pixels in the y-axis ([120,240] to [370,340]). This area shall justify in containing the information of the middle of the lung in all the images. Fig. \ref{region} shows the selected region in some different images.
+The main difference between an open lung and closed lung is that the open lung image has lower pixel values(near to black) in the middle of the lung. First, we set a region in the middle of the images for analyzing the pixel values in them. This region should be at the center of the lung in all the images, so open-lung and closed-lung show the differences in this area. Unfortunately, the images of the dataset were not on one scale, and the lung's position differed for different patients; so after experiments and analysis, as the images have 512*512 pixels resolution, we set the region in the area of 120 to 370 pixels in the x-axis and 240 to 340 pixels in the y-axis ([120,240] to [370,340]). This area shall justify in containing the information of the middle of the lung in all the images.
 
 
 The images of our dataset are 16-bit grayscale images. The maximum pixel value between all the images is almost equal to 5000. This maximum value differs very much between different images. At the next step for discarding some images and selecting the rest of them from an image sequence that belongs to a patient, we aim to measure the pixels of each image in the indicated region that have less value than 300, which we call dark pixels. This number was chosen out of our experiments.
@@ -57,25 +46,25 @@ We calculated this threshold in this manner that the images in a sequence (CT sc
 In the next figure, the image sequence of one patient is depicted, where you can observe which of the images the algorithm discards and which will be selected.
 
 <p align="center">
-	<img src="images/sequence-1.jpg" alt="photo not available" width="100%" height="70%">
-	<br>
-	<em>The output of the selection algorithm. The highlighted images are the rejected ones by the algorithm</em>
+    <img src="images/sequence-1.jpg" alt="photo not available" width="100%" height="70%">
+    <br>
+    <em>The output of the selection algorithm. The highlighted images are the rejected ones by the algorithm</em>
 </p>
 
 **The CT selection algorithm is shared at [CT_selection_algorithm.py](CT_selection_algorithm.py)**
 
-In this research, at the next stage of our work, we used deep convolution networks to classify the selected image of the first stage into normal or COVID-19. We utilized Xception, ResNet50V2 and a modified version of ResNet50V2 for running the classification.
-
+# Neural Networks
+In this research, at the next stage of our work, we used deep convolution networks to classify the selected image of the first stage into normal or COVID-19. We utilized Xception, ResNet50V2, and a modified version of ResNet50V2 for running the classification.
 
 
 Feature pyramid network(FPN) helps when there are objects with different scales in the image. Although here we investigate image classification, to do this, the network must learn about the infection points and classify the image based on them. Using FPN can help us better classify the images in our cases.
 
-In the next figure you can see the architecture of the proposed network.  We used concatenation layers instead of adding layers in the default version of the feature pyramid network due to the authors' experience. At the end of the network, we concatenated the five classification results of the feature pyramid outputs(each output presents classification based on one scale features) and gave it to the classifier so that the network can use all of them for better classification. 
+In the next figure, you can see the architecture of the proposed network.  We used concatenation layers instead of adding layers in the default version of the feature pyramid network due to the authors' experience. At the end of the network, we concatenated the five classification results of the feature pyramid outputs(each output presents classification based on one scale features) and gave it to the classifier so that the network can use all of them for better classification. 
 
 <p align="center">
-	<img src="images/FPN-1.jpg" alt="photo not available" width="100%" height="70%">
-	<br>
-	<em>Architecture of ResNet50V2 with FPN</em>
+    <img src="images/FPN-1.jpg" alt="photo not available" width="100%" height="70%">
+    <br>
+    <em>Architecture of ResNet50V2 with FPN</em>
 </p>
 
 The evaluation results based on single image classification is reported in next table:
@@ -94,6 +83,8 @@ The evaluation results based on single image classification is reported in next 
 **In [Automated_covid_detector_validation.ipynb](Automated_covid_detector_validation.ipynb) You can find the developed code for validating our fully automated networks.**
 
 **By using [Automated_covid_detector.ipynb](Automated_covid_detector.ipynb), you can apply the automated network on a patient CT scan Images to find out if he is infected to COVID-19 or not**
+
+The fully automated network takes the Ct scan images of a person as an input and runs the selection algorithm on them to select only the proper ones. Then the selected images would be given to network for classification, and if at least 30% of the selected images of a patient be classified as COVID-19, then that person would be considered as infected to COVID-19.
 
 
 The evaluated results of the fully automated network on more than 230 patients are shown in the next table:
