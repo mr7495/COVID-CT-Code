@@ -103,3 +103,8 @@ The evaluated results of the fully automated network on more than 230 patients a
  ResNet50V2 with FPN| 237.29 | 7.4 | 17.6 | 6 | 219.6 | 1.4 
  Xception | 233 | 11.6 | 18.8 | 11.4 | 214.2 | 0.2
  ResNet50V2 | 235.4 | 9.2 | 18.2 | 8.4 | 217.2 | 0.8
+ 
+ 
+ 
+ **The pre-prints is available at:** </br>
+ https://www.researchgate.net/publication/341804692_A_Fully_Automated_Deep_Learning-based_Network_For_Detecting_COVID-from_a_New_And_Large_Lung_CT_Scan_Dataset
