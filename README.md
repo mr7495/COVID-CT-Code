@@ -89,8 +89,17 @@ The evaluation results based on single image classification is reported in next 
 
 **The developed code for training and validation is shared available at [COVID_Train&Validation.ipynb](COVID_Train&Validation.ipynb)**
 
-# Fully automated system
+# Fully automated Network
 
 **In [Automated_covid_detector_validation.ipynb](Automated_covid_detector_validation.ipynb) You can find the developed code for validating our fully automated networks.**
 
 **By using [Automated_covid_detector.ipynb](Automated_covid_detector.ipynb), you can apply the automated network on a patient CT scan Images to find out if he is infected to COVID-19 or not**
+
+
+The evaluated results of the fully automated network on more than 230 patients are shown in the next table:
+
+  Average between five folds | Correct Identified Patients | Wrong Identified Patients | Correct COVID Identified |COVID Wrong  Identified | Normal Correct Identified |Normal Wrong  Identified
+------------ | ------------- | ------------- | -------------  | ------------- | ------------- | -------------  
+ ResNet50V2 with FPN| 237.29 | 7.4 | 17.6 | 6 | 219.6 | 1.4 
+ Xception | 233 | 11.6 | 18.8 | 11.4 | 214.2 | 0.2
+ ResNet50V2 | 235.4 | 9.2 | 18.2 | 8.4 | 217.2 | 0.8
