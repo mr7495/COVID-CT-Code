@@ -81,7 +81,7 @@ In the next figure you can see the architecture of the proposed network.  We use
 The evaluation results based on single image classification is reported in next table:
 
   Average between five folds | Overall Accuracy | COVID sensitivity | Normal sensitivity 
------------- | ------------- | ------------- | ------------- | ------------- 
+------------ | ------------- | ------------- | -------------  
  ResNet50V2 with FPN| 98.49 | 94.96 | 98.7 
  Xception| 96.55 | 98.02 | 96.47 
  ResNet50V2 | 97.52 | 97.99 | 97.49  
