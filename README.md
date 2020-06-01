@@ -78,6 +78,14 @@ In the next figure you can see the architecture of the proposed network.  We use
 	<em>Architecture of ResNet50V2 with FPN</em>
 </p>
 
+The evaluation results based on single image classification is reported in next table:
+
+  Average between five folds | Overall Accuracy | COVID sensitivity | Normal sensitivity 
+------------ | ------------- | ------------- | ------------- | ------------- 
+ ResNet50V2 with FPN| 98.49 | 94.96 | 98.7 
+ Xception| 96.55 | 98.02 | 96.47 
+ ResNet50V2 | 97.52 | 97.99 | 97.49  
+
 
 **The developed code for training and validation is shared available at [COVID_Train&Validation.ipynb](COVID_Train&Validation.ipynb)**
 
@@ -85,4 +93,4 @@ In the next figure you can see the architecture of the proposed network.  We use
 
 **In [Automated_covid_detector_validation.ipynb](Automated_covid_detector_validation.ipynb) You can find the developed code for validating our fully automated networks.**
 
-By using [Automated_covid_detector.ipynb](Automated_covid_detector.ipynb), you can apply the automated network on a patient CT scan Images to find out if he is infected to COVID-19 or not?
+**By using [Automated_covid_detector.ipynb](Automated_covid_detector.ipynb), you can apply the automated network on a patient CT scan Images to find out if he is infected to COVID-19 or not**
