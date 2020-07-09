@@ -84,7 +84,7 @@ The evaluation results based on single image classification is reported in next 
 
 **By using [Automated_covid_detector.ipynb](Automated_covid_detector.ipynb), you can apply the automated network on a patient CT scan Images to find out if he is infected to COVID-19 or not**
 
-The fully automated network takes the Ct scan images of a person as an input and runs the selection algorithm on them to select only the proper ones. Then the selected images would be given to network for classification, and if at least 30% (This is an optional value can be changed) of the selected images of a patient be classified as COVID-19, then that person would be considered as infected to COVID-19.
+The fully automated network takes the Ct scan images of a person as an input and runs the selection algorithm on them to select only the proper ones. Then the selected images would be given to network for classification, and if some percent of the selected images (An optional value) of a patient be classified as COVID-19, then that person would be considered as infected to COVID-19.
 
 
 The evaluated results of the fully automated network on more than 230 patients are shown in the next table:
