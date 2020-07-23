@@ -75,6 +75,19 @@ The evaluation results based on single image classification is reported in next 
  Xception| 96.55 | 98.02 | 96.47 
  ResNet50V2 | 97.52 | 97.99 | 97.49  
 
+<p align="center">
+    <img src="images/covid_vis-converted-1.jpg" alt="photo not available" width="100%" height="70%">
+    <br>
+    <em>Visualized Features by Grad-Cam algorithm to show that the network is operating correctly and indicate the
+infection regions in the COVID-19 CT Scans</em>
+</p>
+
+<p align="center">
+    <img src="images/normal_vis-converted-1.jpg" alt="photo not available" width="100%" height="70%">
+    <br>
+    <em>In the normal images, as the network does not see any infections, the highlighted features would be at
+the center showing that no infections have been found</em>
+</p>
 
 **The developed code for training and validation is shared available at [COVID_Train&Validation.ipynb](COVID_Train&Validation.ipynb)**
 
