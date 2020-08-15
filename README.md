@@ -5,7 +5,7 @@ COVID-19 is a severe global problem that has crippled many industries and killed
 We introduce a new [dataset](https://github.com/mr7495/COVID-CTset) that contains 48260 CT scan images from 282 normal persons and 15589 images from 95 patients with COVID-19 infection. Our proposed network takes all the CT scan image sequences of a patient as the input and determines if the patient is infected with COVID-19. At the first stage, this network runs an image processing algorithm to discard those CT images that inside the lung is not properly visible in them. This helps to reduce the number of images that shall be identified as normal or COVID-19, so it reduces the processing time. Also, running this algorithm makes the deep network at the next stage to analyze only the proper images and thus reduces false detections. At the next stage, we propose a modified version of ResNet50V2 that is enhanced by a feature pyramid network for classifying the selected CT images into COVID-19 or normal. If enough number of chosen CT scan images of a patient be identified as COVID-19, the network considers that patient, infected to this disease. The ResNet50V2 with feature pyramid network achieved 98.49% accuracy on more than 7996 validation images and correctly identified almost 237 patients from 245 patients.
 
 
-**The details about our dataset is available at [COVID-CTset](https://github.com/mr7495/COVID-CTset)**
+**The details about our dataset is available at [COVID-CTset](https://github.com/mr7495/COVID-CTset)**</br>
 **Find our paper at [Here](https://github.com/mr7495/COVID-CTset/CT_V2.pdf)**
  
 The general view of our work in this paper is represented in the next figure.
