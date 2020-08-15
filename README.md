@@ -6,6 +6,7 @@ We introduce a new [dataset](https://github.com/mr7495/COVID-CTset) that contain
 
 
 **The details about our dataset is available at [COVID-CTset](https://github.com/mr7495/COVID-CTset)**
+**Find our paper at [Here](https://github.com/mr7495/COVID-CTset/CT_V2.pdf)**
  
 The general view of our work in this paper is represented in the next figure.
 
