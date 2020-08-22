@@ -109,7 +109,13 @@ The evaluated results of the fully automated network on more than 230 patients a
  Xception | 233 | 11.6 | 18.8 | 11.4 | 214.2 | 0.2
  ResNet50V2 | 235.4 | 9.2 | 18.2 | 8.4 | 217.2 | 0.8
  
- 
+ **You may find some errors if using Tensorflow and Keras new versions. If so, apply this cell at the begging of your code:**
+ ```
+!pip uninstall tensorflow
+!pip uninstall keras
+!pip install tensorflow==2.2
+!pip install keras==2.3.0
+```
  
  **The pre-prints is available at:** </br>
  
