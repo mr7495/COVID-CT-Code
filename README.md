@@ -125,8 +125,9 @@ The evaluated results of the fully automated network on more than 230 patients a
  
  https://www.preprints.org/manuscript/202006.0031/v2
  
-The paper final bibtex will be added soon, until then you can cite it by:
 
+
+If you use our data and codes, please cite it by:
  ```
 @article {rahimzadeh2020fully,
 	author = {Rahimzadeh, Mohammad and Attar, Abolfazl and Sakhaei, Seyed Mohammad},
