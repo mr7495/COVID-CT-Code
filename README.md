@@ -1,8 +1,6 @@
 # A Fully Automated Deep Learning-based Network For Detecting COVID-19 from a New And Large Lung CT Scan Dataset
 
-COVID-19 is a severe global problem that has crippled many industries and killed many people around the world. One of the primary ways to decrease the casualties is the infected person's identification at the proper time.
- In this paper, we aim to propose a fully-automated method to detect COVID-19 from the patient's CT scan without needing a clinical technician.
-We introduce a new [dataset](https://github.com/mr7495/COVID-CTset) that contains 48260 CT scan images from 282 normal persons and 15589 images from 95 patients with COVID-19 infection. Our proposed network takes all the CT scan image sequences of a patient as the input and determines if the patient is infected with COVID-19. At the first stage, this network runs an image processing algorithm to discard those CT images that inside the lung is not properly visible in them. This helps to reduce the number of images that shall be identified as normal or COVID-19, so it reduces the processing time. Also, running this algorithm makes the deep network at the next stage to analyze only the proper images and thus reduces false detections. At the next stage, we propose a modified version of ResNet50V2 that is enhanced by a feature pyramid network for classifying the selected CT images into COVID-19 or normal. If enough number of chosen CT scan images of a patient be identified as COVID-19, the network considers that patient, infected to this disease. The ResNet50V2 with feature pyramid network achieved 98.49% accuracy on more than 7996 validation images and correctly identified almost 237 patients from 245 patients.
+COVID-19 is a severe global problem, and AI can play a significant role in preventing losses by monitoring and detecting infected persons in early-stage. This paper aims to propose a high-speed and accurate fully-automated method to detect COVID-19 from the patient's CT scan images. We introduce a new dataset that contains 48260 CT scan images from 282 normal persons and 15589 images from 95 patients with COVID-19 infections. At the first stage, this system runs our proposed image processing algorithm to discard those CT images that inside the lung is not properly visible in them. This action helps to reduce the processing time and false detections. At the next stage, we introduce a novel method for increasing the classification accuracy of convolutional networks. We implemented our method using the ResNet50V2 network and a modified feature pyramid network alongside our designed architecture for classifying the selected CT images into COVID-19 or normal with higher accuracy than other models. After running these two phases, the system determines the condition of the patient using a selected threshold. We are the first to evaluate our system in two different ways. In the single image classification stage, our model achieved 98.49% accuracy on more than 7996 test images. At the patient identification phase, the system correctly identified almost 234 of 245 patients with high speed. We also investigate the classified images with the Grad-CAM algorithm to indicate the area of infections in images and evaluate our model classification correctness.
 
 
 **The details about our dataset is available at [COVID-CTset](https://github.com/mr7495/COVID-CTset)**</br>
@@ -123,7 +121,7 @@ The evaluated results of the fully automated network on more than 230 patients a
  
  https://www.researchgate.net/publication/341804692_A_Fully_Automated_Deep_Learning-based_Network_For_Detecting_COVID-from_a_New_And_Large_Lung_CT_Scan_Dataset
  
- https://www.preprints.org/manuscript/202006.0031/v2
+ https://www.preprints.org/manuscript/202006.0031/v3
  
 
 
