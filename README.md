@@ -53,7 +53,7 @@ In the next figure, the image sequence of one patient is depicted, where you can
 **The CT selection algorithm is shared at [CT_selection_algorithm.py](CT_selection_algorithm.py)**
 
 # Neural Networks
-In this research, at the next stage of our work, we used deep convolution networks to classify the selected image of the first stage into normal or COVID-19. We utilized Xception, ResNet50V2, and a modified version of ResNet50V2 for running the classification.
+In this research, at the next stage of our work, we used deep convolution networks to classify the selected image of the first stage into normal or COVID-19. We utilized Xception, ResNet50V2, and our model for running the classification.
 
 
 Feature pyramid network(FPN) helps when there are objects with different scales in the image. Although here we investigate image classification, to do this, the network must learn about the infection points and classify the image based on them. Using FPN can help us better classify the images in our cases.
@@ -101,11 +101,11 @@ The fully automated network takes the Ct scan images of a person as an input and
 
 The evaluated results of the fully automated network on more than 230 patients are shown in the next table:
 
-  Average between five folds | Correct Identified Patients | Wrong Identified Patients | Correct COVID Identified |COVID Wrong  Identified | Normal Correct Identified |Normal Wrong  Identified
+  Average between five folds | Correct Identified Patients | Wrong Identified Patients | Correct COVID Identified |Wrong Identified as Normal | Normal Correct Identified |Wrong Identified as COVID
 ------------ | ------------- | ------------- | -------------  | ------------- | ------------- | -------------  
- ResNet50V2 with FPN| 237.29 | 7.4 | 17.6 | 6 | 219.6 | 1.4 
- Xception | 233 | 11.6 | 18.8 | 11.4 | 214.2 | 0.2
- ResNet50V2 | 235.4 | 9.2 | 18.2 | 8.4 | 217.2 | 0.8
+ Our model| 233.8 | 10.8 | 17.6 | 1.4 | 216.2 | 9.4
+ Xception | 218.8 | 25.8 | 18.8 | 0.2 | 200 | 25.6
+ ResNet50V2 | 225.2 | 19.4 | 18.2 | 0.8 | 207 | 18.6
  
  **You may find some errors if using Tensorflow and Keras new versions. If so, apply this cell at the begging of your code:**
  ```
