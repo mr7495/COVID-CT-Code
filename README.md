@@ -118,7 +118,7 @@ The evaluated results of the fully automated network on more than 230 patients a
 **The published version of our paper is available at:** </br>
  https://doi.org/10.1016/j.bspc.2021.102588
  
- **The pre-prints is available at:** </br>
+ **The pre-prints are available at:** </br>
  
  https://doi.org/10.1101/2020.06.08.20121541
  
