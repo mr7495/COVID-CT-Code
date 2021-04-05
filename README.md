@@ -4,7 +4,7 @@ COVID-19 is a severe global problem, and AI can play a significant role in preve
 
 
 **The details about our dataset is available at [COVID-CTset](https://github.com/mr7495/COVID-CTset)**</br>
-**Find our paper at [Here](https://github.com/mr7495/COVID-CTset/blob/master/CT_V3.pdf)**
+**Find our paper at [Here](https://doi.org/10.1016/j.bspc.2021.102588)**
  
 The general view of our work in this paper is represented in the next figure.
 
@@ -107,13 +107,7 @@ The evaluated results of the fully automated network on more than 230 patients a
  Xception | 218.8 | 25.8 | 18.8 | 0.2 | 200 | 25.6
  ResNet50V2 | 225.2 | 19.4 | 18.2 | 0.8 | 207 | 18.6
  
- **You may find some errors if using Tensorflow and Keras new versions. If so, apply this cell at the begging of your code:**
- ```
-!pip uninstall tensorflow
-!pip uninstall keras
-!pip install tensorflow==2.2
-!pip install keras==2.3.0
-```
+
 
 **The published version of our paper is available at:** </br>
  https://doi.org/10.1016/j.bspc.2021.102588
