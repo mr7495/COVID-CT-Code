@@ -122,7 +122,7 @@ The evaluated results of the fully automated network on more than 230 patients a
  
 
 
-**If you use our data and codes, please cite it by:**
+**If you use our data or codes, please cite it by:**
  ```
 @article{RAHIMZADEH2021102588,
 title = {A fully automated deep learning-based network for detecting COVID-19 from a new and large lung CT scan dataset},
