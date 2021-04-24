@@ -94,9 +94,9 @@ the center showing that no infections have been found</em>
 
 **In [Automated_covid_detector_validation.ipynb](Automated_covid_detector_validation.ipynb) You can find the developed code for validating our fully automated networks on out dataset.**
 
-**By using [Automated_covid_detector_with CT selection algorithm](Automated_covid_detector_with CT selection algorithm.ipynb), you can apply the automated network with CT selection algorithm on a patient CT scan folder to find out if he is infected to COVID-19 or not**
+**By using [Automated_covid_detector_with CT selection algorithm](Automated_covid_detector_with_CT_selection_algorithm.ipynb), you can apply the automated network with CT selection algorithm on a patient CT scan folder to find out if he is infected to COVID-19 or not**
 
-**[Automated_covid_detector_without_selection_algorithm](Automated_covid_detector_without_selection_algorithm.ipynb)also presents the code for running our system on custom CT images without utilizing the CT selection algorithm**
+**[Automated_covid_detector_without_selection_algorithm](Automated_covid_detector_without_selection_algorithm.ipynb) also presents the code for running our system on custom CT images without utilizing the CT selection algorithm**
 
 The fully automated network takes the Ct scan images of a person as an input and runs the selection algorithm on them to select only the proper ones. Then the selected images would be given to network for classification, and if some percent of the selected images (An optional value) of a patient be classified as COVID-19, then that person would be considered as infected to COVID-19.
 
