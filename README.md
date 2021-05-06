@@ -114,13 +114,7 @@ The evaluated results of the fully automated network on more than 230 patients a
 **The published version of our paper is available at:** </br>
  https://doi.org/10.1016/j.bspc.2021.102588
  
- **The pre-prints are available at:** </br>
- 
- https://doi.org/10.1101/2020.06.08.20121541
- 
- https://www.researchgate.net/publication/341804692_A_Fully_Automated_Deep_Learning-based_Network_For_Detecting_COVID-from_a_New_And_Large_Lung_CT_Scan_Dataset
- 
- https://www.preprints.org/manuscript/202006.0031/v3
+
  
 
 
