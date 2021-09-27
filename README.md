@@ -4,6 +4,7 @@ COVID-19 is a severe global problem, and AI can play a significant role in preve
 
 
 **The details about our dataset is available at [COVID-CTset](https://github.com/mr7495/COVID-CTset)**</br>
+**The trained models are made available at https://drive.google.com/drive/folders/1xdk-mCkxCDNwsMAk2SGv203rY1mrbnPB**</br>
 **Find our paper at [Here](https://doi.org/10.1016/j.bspc.2021.102588)**
  
 The general view of our work in this paper is represented in the next figure.
@@ -105,7 +106,7 @@ The evaluated results of the fully automated network on more than 230 patients a
 
   Average between five folds | Correct Identified Patients | Wrong Identified Patients | Correct COVID Identified |Wrong Identified as Normal | Normal Correct Identified |Wrong Identified as COVID
 ------------ | ------------- | ------------- | -------------  | ------------- | ------------- | -------------  
- Our model| 233.8 | 10.8 | 17.6 | 1.4 | 216.2 | 9.4
+ Our model https://drive.google.com/drive/folders/1xdk-mCkxCDNwsMAk2SGv203rY1mrbnPB | 233.8 | 10.8 | 17.6 | 1.4 | 216.2 | 9.4
  Xception | 218.8 | 25.8 | 18.8 | 0.2 | 200 | 25.6
  ResNet50V2 | 225.2 | 19.4 | 18.2 | 0.8 | 207 | 18.6
  
